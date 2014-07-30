@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreMotion/CoreMotion.h>
 
 @class Bumper;
+@class MainScene;
 
 @interface Board : CCPhysicsNode <CCPhysicsCollisionDelegate>
 {
@@ -27,6 +29,17 @@
     CCNode* _endJackpot;
     BOOL _jackpotTaken;
     BOOL _jackpotEnabled;
+    
+    int _score;
+    BOOL _gameRunning;
+    int _ballCount;
+    
+    CMMotionManager* _motionManager;
+    CGPoint _accelerometerReading;
 }
+
+@property (nonatomic,readonly) MainScene* mainScene;
+
+- (void) startGame;
 
 @end

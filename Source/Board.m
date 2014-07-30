@@ -11,8 +11,11 @@
 #import "CCEffectReflection.h"
 #import "Bumper.h"
 #import "Light.h"
+#import "MainScene.h"
 
 #define SCROLL_DAMPENING 0.1
+#define GRAVITY_FIXED -100
+#define GRAVITY_ACCEL 100
 
 @implementation Board
 
@@ -50,11 +53,33 @@
     
     self.collisionDelegate = self;
     
-    [self launchBall];
+    // Setup scoring
+    self.mainScene.lblInfo.string = @"tap to play";
+    self.mainScene.lblScore.string = @"0";
+    
+    // Setup accelerometer
+    _motionManager = [[CMMotionManager alloc] init];
+    _motionManager.accelerometerUpdateInterval = 1.0/60.0;
+    
+    [_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue]
+                                             withHandler:^(CMAccelerometerData  *accelerometerData, NSError *error) {
+                                                 _accelerometerReading = ccp( accelerometerData.acceleration.y, -accelerometerData.acceleration.x);
+                                                 if(error){
+                                                     
+                                                     NSLog(@"%@", error);
+                                                 }
+                                             }];
 }
 
 - (void) fixedUpdate:(CCTime)delta
 {
+    // Update gravitation based on acceleromenter
+    CGPoint accel = [self readAccelerometer];
+    float xAccel = clampf(accel.x, -0.5, 0.5) * GRAVITY_ACCEL;
+    self.gravity = ccp(xAccel * 2, GRAVITY_FIXED);
+    
+    NSLog(@"gravity: %f, %f", self.gravity.x, self.gravity.y);
+    
     // Center board relative ball
     float screenHeight = self.parent.contentSizeInPoints.height;
     
@@ -109,6 +134,7 @@
 
 - (BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair ball:(CCNode *)ball bumper:(Bumper *)bumper
 {
+    [self addScore:[bumper.name intValue]];
     [bumper flash];
     
     return YES;
@@ -129,13 +155,24 @@
 
 - (BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair ball:(CCNode *)ball bottom:(CCNode *)bumper
 {
-    [self launchBall];
+    if (_ballCount < 3)
+    {
+        [self launchBall];
+        _ballCount ++;
+        [self updateBallCount];
+    }
+    else
+    {
+        [self gameOver];
+    }
     
     return NO;
 }
 
 - (BOOL) ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair ball:(CCNode *)ball target:(CCNode *)target
 {
+    [self addScore:200];
+    
     Light* light = [self getLightNamed:[target.name stringByAppendingString:@"light"]];
     
     [light activate];
@@ -178,6 +215,8 @@
 
 - (void) takeJackpot
 {
+    [self addScore:1000000];
+    
     _jackpotTaken = YES;
     
     for (Light* light in _lights)
@@ -206,6 +245,40 @@
     
 }
 
+- (void) addScore:(int)score
+{
+    _score += score;
+    self.mainScene.lblScore.string = [NSString stringWithFormat:@"%d", _score];
+}
+
+- (void) updateBallCount
+{
+    self.mainScene.lblInfo.string = [NSString stringWithFormat:@"ball %d", _ballCount];
+}
+
+- (void) startGame
+{
+    // Reset score
+    _score = 0;
+    self.mainScene.lblScore.string = @"0";
+    
+    // Reset ball count
+    _ballCount = 1;
+    [self updateBallCount];
+    
+    // Launch ball and start game
+    [self launchBall];
+    _gameRunning = YES;
+}
+
+- (void) gameOver
+{
+    self.mainScene.lblInfo.string = @"game over";
+    
+    [self.mainScene handleGameOver];
+    _gameRunning = NO;
+}
+
 - (Light*) getLightNamed:(NSString*)name
 {
     for (Light* light in _lights)
@@ -216,5 +289,14 @@
     return NULL;
 }
 
+- (MainScene*) mainScene
+{
+    return (MainScene*)self.parent;
+}
+
+- (CGPoint) readAccelerometer
+{
+    return _accelerometerReading;
+}
 
 @end

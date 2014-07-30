@@ -10,7 +10,18 @@
 #import "Board.h"
 
 @interface MainScene : CCNode
+{
+    CCLabelTTF* _lblInfo;
+    CCLabelTTF* _lblScore;
+    
+    CCButton* _playButton;
+}
 
 @property (nonatomic,strong) Board* board;
+
+@property (nonatomic,readonly) CCLabelTTF* lblInfo;
+@property (nonatomic,readonly) CCLabelTTF* lblScore;
+
+- (void) handleGameOver;
 
 @end

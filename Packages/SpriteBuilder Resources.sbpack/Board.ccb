@@ -55,7 +55,7 @@
 					<string>Position</string>
 					<key>value</key>
 					<array>
-						<real>463.7890625</real>
+						<real>179.7890625</real>
 						<real>708.4921875</real>
 						<integer>0</integer>
 						<integer>0</integer>
@@ -4647,8 +4647,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -7004,7 +7002,7 @@
 								<key>type</key>
 								<string>StringSimple</string>
 								<key>value</key>
-								<string></string>
+								<string>5000</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -7228,7 +7226,7 @@
 								<key>type</key>
 								<string>StringSimple</string>
 								<key>value</key>
-								<string></string>
+								<string>5000</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -7238,7 +7236,7 @@
 								<key>value</key>
 								<array>
 									<real>329</real>
-									<real>560</real>
+									<real>570</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -7452,7 +7450,7 @@
 								<key>type</key>
 								<string>StringSimple</string>
 								<key>value</key>
-								<string></string>
+								<string>1000</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -7676,7 +7674,7 @@
 								<key>type</key>
 								<string>StringSimple</string>
 								<key>value</key>
-								<string></string>
+								<string>1000</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -7900,7 +7898,7 @@
 								<key>type</key>
 								<string>StringSimple</string>
 								<key>value</key>
-								<string></string>
+								<string>1000</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -8124,7 +8122,7 @@
 								<key>type</key>
 								<string>StringSimple</string>
 								<key>value</key>
-								<string></string>
+								<string>1000</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -8740,7 +8738,7 @@
 								<key>type</key>
 								<string>StringSimple</string>
 								<key>value</key>
-								<string></string>
+								<string>5000</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -8805,6 +8803,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>

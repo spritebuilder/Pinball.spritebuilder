@@ -10,4 +10,25 @@
 
 @implementation MainScene
 
+- (void) pressedPlay:(CCButton*)button
+{
+    _playButton.visible = NO;
+    
+    [self.board startGame];
+}
+
+- (void) handleGameOver
+{
+    [self scheduleOnce:@selector(enablePlayButton) delay:3];
+    
+    [self.lblInfo runAction:[CCActionBlink actionWithDuration:3 blinks:9]];
+    
+}
+
+- (void) enablePlayButton
+{
+    _playButton.visible = YES;
+    self.lblInfo.string = @"tap to play";
+}
+
 @end

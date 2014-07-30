@@ -38,6 +38,6 @@
 	<key>publishToMainProject</key>
 	<true/>
 	<key>publishToZip</key>
-	<true/>
+	<false/>
 </dict>
 </plist>

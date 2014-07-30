@@ -32,6 +32,7 @@
 		B751D2391981EC1A00722D93 /* Light.m in Sources */ = {isa = PBXBuildFile; fileRef = B751D2381981EC1A00722D93 /* Light.m */; };
 		B751D23C1981F31A00722D93 /* Flipper.m in Sources */ = {isa = PBXBuildFile; fileRef = B751D23B1981F31A00722D93 /* Flipper.m */; };
 		B751D23F1982293000722D93 /* SideBumper.m in Sources */ = {isa = PBXBuildFile; fileRef = B751D23E1982293000722D93 /* SideBumper.m */; };
+		B751D257198878F500722D93 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B751D256198878F500722D93 /* CoreMotion.framework */; };
 		B776A26319702A2700B7D0C2 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = B776A26219702A2700B7D0C2 /* Board.m */; };
 		B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3117B978D7009739AE /* QuartzCore.framework */; };
 		B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3317B978D7009739AE /* OpenGLES.framework */; };
@@ -95,6 +96,7 @@
 		B751D23B1981F31A00722D93 /* Flipper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flipper.m; path = Source/Flipper.m; sourceTree = "<group>"; };
 		B751D23D1982293000722D93 /* SideBumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideBumper.h; path = Source/SideBumper.h; sourceTree = "<group>"; };
 		B751D23E1982293000722D93 /* SideBumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideBumper.m; path = Source/SideBumper.m; sourceTree = "<group>"; };
+		B751D256198878F500722D93 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B776A26119702A2700B7D0C2 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Board.h; path = Source/Board.h; sourceTree = "<group>"; };
 		B776A26219702A2700B7D0C2 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Board.m; path = Source/Board.m; sourceTree = "<group>"; };
 		B77F1B2E17B978D7009739AE /* Pinball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinball.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B751D257198878F500722D93 /* CoreMotion.framework in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B737898A1807642B0076A88C /* libcocos2d.a in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
@@ -215,6 +218,7 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B751D256198878F500722D93 /* CoreMotion.framework */,
 				8392007918EE8E3300B6C429 /* GLKit.framework */,
 				B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */,
 				B77F1B3117B978D7009739AE /* QuartzCore.framework */,
