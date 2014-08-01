@@ -28,7 +28,7 @@
     _ballInitialPos = _ball.position;
     
     // Setup reflection effect on the ball
-    CCEffectReflection* effect = [CCEffectReflection effectWithEnvironment:_reflectionMap normalMap:NULL];
+    CCEffectReflection* effect = [CCEffectReflection effectWithShininess:0.7 environment:_reflectionMap];
     effect.fresnelBias = 0.3;
     effect.fresnelPower = 0.5;
     
@@ -78,8 +78,6 @@
     float xAccel = clampf(accel.x, -0.5, 0.5) * GRAVITY_ACCEL;
     self.gravity = ccp(xAccel * 2, GRAVITY_FIXED);
     
-    NSLog(@"gravity: %f, %f", self.gravity.x, self.gravity.y);
-    
     // Center board relative ball
     float screenHeight = self.parent.contentSizeInPoints.height;
     
@@ -98,6 +96,8 @@
     self.position = ccp(0.5, posY);
     
     [super fixedUpdate:delta];
+    
+    _ballShadow.position = _ball.position;
 }
 
 - (void) launchBall

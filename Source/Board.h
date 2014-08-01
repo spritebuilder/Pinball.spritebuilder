@@ -17,6 +17,7 @@
     NSMutableSet* _hitTargets;
     
     CCSprite* _ball;
+    CCSprite* _ballShadow;
     CGPoint _ballInitialPos;
     
     CCSprite* _reflectionMap;

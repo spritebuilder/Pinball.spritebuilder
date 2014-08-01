@@ -73,7 +73,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.4982394278049469</real>
+							<real>0.5</real>
 							<real>0.0</real>
 							<integer>0</integer>
 							<integer>2</integer>
@@ -102,6 +102,8 @@
 						<string>Board.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
