@@ -31,6 +31,11 @@
     return [self initWithRefraction:1.0f environment:nil normalMap:nil];
 }
 
+-(id)initWithRefraction:(float)refraction environment:(CCSprite *)environment
+{
+    return [self initWithRefraction:refraction environment:environment normalMap:nil];
+}
+
 -(id)initWithRefraction:(float)refraction environment:(CCSprite *)environment normalMap:(CCSpriteFrame *)normalMap
 {
     NSArray *uniforms = @[
@@ -41,7 +46,7 @@
                           [CCEffectUniform uniform:@"mat4" name:@"u_screenToEnv" value:[NSValue valueWithGLKMatrix4:GLKMatrix4Identity]],
                           ];
     
-    if((self = [super initWithFragmentUniforms:uniforms vertexUniforms:nil varying:nil]))
+    if((self = [super initWithFragmentUniforms:uniforms vertexUniforms:nil varyings:nil]))
     {
         _refraction = refraction;
         _conditionedRefraction = CCEffectUtilsConditionRefraction(refraction);
@@ -51,6 +56,11 @@
         self.debugName = @"CCEffectRefraction";
     }
     return self;
+}
+
++(id)effectWithRefraction:(float)refraction environment:(CCSprite *)environment
+{
+    return [[self alloc] initWithRefraction:refraction environment:environment];
 }
 
 +(id)effectWithRefraction:(float)refraction environment:(CCSprite *)environment normalMap:(CCSpriteFrame *)normalMap
