@@ -31,33 +31,46 @@
 
 @interface Board : CCPhysicsNode <CCPhysicsCollisionDelegate>
 {
+    // Keeps a set with the currently lit targets (to easily count them)
     NSMutableSet* _hitTargets;
     
+    // A reference to the ball sprite and it's shadow
     CCSprite* _ball;
     CCSprite* _ballShadow;
+    
+    // The initial position of the ball
     CGPoint _ballInitialPos;
     
+    // The image that is reflected in the ball
     CCSprite* _reflectionMap;
     
+    // Lists of different game elements, for easy iteration
     NSArray* _bumpers;
     NSArray* _lights;
     
+    // The jackpot bumper
     Bumper* _jackpotBumper;
     
+    // Reference to the end jackpot sensor
     CCNode* _endJackpot;
+    
+    // Jackpot state
     BOOL _jackpotTaken;
     BOOL _jackpotEnabled;
     
+    // Game state
     int _score;
     BOOL _gameRunning;
     int _ballCount;
     
+    // Accelerometer helpers
     CMMotionManager* _motionManager;
     CGPoint _accelerometerReading;
 }
 
 @property (nonatomic,readonly) MainScene* mainScene;
 
+// Called by MainScene to start the game
 - (void) startGame;
 
 @end
