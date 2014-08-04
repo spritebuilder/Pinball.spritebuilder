@@ -35,7 +35,10 @@
     self = [super init];
     if (!self) return NULL;
     
+    // Enables the class to detect touches
     self.userInteractionEnabled = YES;
+    
+    // Allows both controls to work independently
     self.exclusiveTouch = NO;
     
     return self;
@@ -43,16 +46,19 @@
 
 - (void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    // Activate the corresponding flipper when touched
     [[self flipper] activate];
 }
 
 - (void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    // Deactivate the corresponding flipper when the touch is released
     [[self flipper] deactivate];
 }
 
 - (Flipper*) flipper
 {
+    // Get the corresponding flipper from the board
     MainScene* main = (MainScene*) self.parent;
     Board* board = main.board;
     

@@ -27,21 +27,26 @@
 
 @implementation MainScene
 
+// Called when the (invisible, full screen) play button is tapped
 - (void) pressedPlay:(CCButton*)button
 {
+    // Hide the button so it cannot be tapped
     _playButton.visible = NO;
     
+    // Start the game!
     [self.board startGame];
 }
 
+// Called by the board on game over
 - (void) handleGameOver
 {
+    // Enable the play button after three seconds and display a blinking game over label
     [self scheduleOnce:@selector(enablePlayButton) delay:3];
-    
     [self.lblInfo runAction:[CCActionBlink actionWithDuration:3 blinks:9]];
     
 }
 
+// Enables the play button
 - (void) enablePlayButton
 {
     _playButton.visible = YES;

@@ -28,9 +28,11 @@
 
 @interface MainScene : CCNode
 {
+    // References to labels
     CCLabelTTF* _lblInfo;
     CCLabelTTF* _lblScore;
     
+    // Reference to play button
     CCButton* _playButton;
 }
 
