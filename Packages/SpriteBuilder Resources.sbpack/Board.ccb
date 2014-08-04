@@ -55,7 +55,7 @@
 					<string>Position</string>
 					<key>value</key>
 					<array>
-						<real>463.7890625</real>
+						<real>179.7890625</real>
 						<real>708.4921875</real>
 						<integer>0</integer>
 						<integer>0</integer>
@@ -8699,8 +8699,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -9130,7 +9128,7 @@
 						<key>children</key>
 						<array/>
 						<key>customClass</key>
-						<string>SideBumper</string>
+						<string></string>
 						<key>displayName</key>
 						<string>Bumper</string>
 						<key>memberVarAssignmentName</key>
@@ -9284,7 +9282,7 @@
 						<key>children</key>
 						<array/>
 						<key>customClass</key>
-						<string>SideBumper</string>
+						<string></string>
 						<key>displayName</key>
 						<string>Bumper</string>
 						<key>memberVarAssignmentName</key>

@@ -31,7 +31,6 @@
 		B751D2361981E85500722D93 /* Bumper.m in Sources */ = {isa = PBXBuildFile; fileRef = B751D2351981E85500722D93 /* Bumper.m */; };
 		B751D2391981EC1A00722D93 /* Light.m in Sources */ = {isa = PBXBuildFile; fileRef = B751D2381981EC1A00722D93 /* Light.m */; };
 		B751D23C1981F31A00722D93 /* Flipper.m in Sources */ = {isa = PBXBuildFile; fileRef = B751D23B1981F31A00722D93 /* Flipper.m */; };
-		B751D23F1982293000722D93 /* SideBumper.m in Sources */ = {isa = PBXBuildFile; fileRef = B751D23E1982293000722D93 /* SideBumper.m */; };
 		B751D257198878F500722D93 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B751D256198878F500722D93 /* CoreMotion.framework */; };
 		B776A26319702A2700B7D0C2 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = B776A26219702A2700B7D0C2 /* Board.m */; };
 		B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3117B978D7009739AE /* QuartzCore.framework */; };
@@ -94,8 +93,6 @@
 		B751D2381981EC1A00722D93 /* Light.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Light.m; path = Source/Light.m; sourceTree = "<group>"; };
 		B751D23A1981F31A00722D93 /* Flipper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flipper.h; path = Source/Flipper.h; sourceTree = "<group>"; };
 		B751D23B1981F31A00722D93 /* Flipper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flipper.m; path = Source/Flipper.m; sourceTree = "<group>"; };
-		B751D23D1982293000722D93 /* SideBumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideBumper.h; path = Source/SideBumper.h; sourceTree = "<group>"; };
-		B751D23E1982293000722D93 /* SideBumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideBumper.m; path = Source/SideBumper.m; sourceTree = "<group>"; };
 		B751D256198878F500722D93 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B776A26119702A2700B7D0C2 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Board.h; path = Source/Board.h; sourceTree = "<group>"; };
 		B776A26219702A2700B7D0C2 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Board.m; path = Source/Board.m; sourceTree = "<group>"; };
@@ -160,8 +157,6 @@
 				B751D2381981EC1A00722D93 /* Light.m */,
 				B751D23A1981F31A00722D93 /* Flipper.h */,
 				B751D23B1981F31A00722D93 /* Flipper.m */,
-				B751D23D1982293000722D93 /* SideBumper.h */,
-				B751D23E1982293000722D93 /* SideBumper.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -379,7 +374,6 @@
 				B776A26319702A2700B7D0C2 /* Board.m in Sources */,
 				B751D2391981EC1A00722D93 /* Light.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
-				B751D23F1982293000722D93 /* SideBumper.m in Sources */,
 				B751D2361981E85500722D93 /* Bumper.m in Sources */,
 				B751D23C1981F31A00722D93 /* Flipper.m in Sources */,
 				B751D2311981D15900722D93 /* FlipperControl.m in Sources */,
